@@ -1,0 +1,1 @@
+RELAY_PIN_IN1 = 36

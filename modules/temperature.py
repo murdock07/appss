@@ -1,0 +1,1 @@
+TEMP_PIN_DATA = 32
