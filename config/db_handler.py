@@ -20,9 +20,10 @@ def close(connection, cursor):
     connection.close()
 
 def load_scheme(cursor):
-    db_schema = cfg.get('Schema', CFGSECTION)    
+    fileName = cfg.get('Schema', CFGSECTION) 
+    filePath = os.path.abspath('config/' + fileName)   
     Schema = ''
-    with open(db_schema, 'r') as File:
+    with open(filePath, 'r') as File:
         Schema = File.read().replace('\n')
     sqlite3.complete_statement(Schema)
     cursor.executescript(Schema)
