@@ -24,6 +24,6 @@ def load_scheme(cursor):
     filePath = os.path.abspath('config/' + fileName)   
     Schema = ''
     with open(filePath, 'r') as File:
-        Schema = File.read().replace('\n')
+        Schema = File.read().replace('\n', '')
     sqlite3.complete_statement(Schema)
     cursor.executescript(Schema)
