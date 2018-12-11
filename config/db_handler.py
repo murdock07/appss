@@ -2,6 +2,7 @@ import sys, os, sqlite3
 sys.path.append(os.path.curdir)
 
 from config import config_handler as cfg
+CFGSECTION = 'DATABASE'
 
 def init():
     connection, cursor = connect()
@@ -9,7 +10,7 @@ def init():
     close(connection, cursor)
 
 def connect():
-    db_name = cfg.get('Name', 'Database')
+    db_name = cfg.get('Name', CFGSECTION)
     connection = sqlite3.connect(db_name)
     cursor = connection.cursor()
     return connection, cursor
@@ -19,7 +20,7 @@ def close(connection, cursor):
     connection.close()
 
 def load_scheme(cursor):
-    db_schema = cfg.get('Schema', 'Database')    
+    db_schema = cfg.get('Schema', CFGSECTION')    
     Schema = ''
     with open(db_schema, 'r') as File:
         Schema = File.read().replace('\n')
