@@ -3,8 +3,8 @@ import time
 from RPi.GPIO import GPIO
 
 def get():
-    LIGHT_INPUT_PIN = 38
-    LIGHT_OUTPUT_PIN = 22
+    LIGHT_SWITCH_PIN = 38
+    LIGHT_READ_PIN = 22
 
     count = 0
 
