@@ -20,7 +20,7 @@ drop table if exists Measurements;
 create table Measurements (
     MeasureTime text,
     Sensor text,
-    MeasuredValue real,
+    MeasuredValue real
 );
 
 drop table if exists Logs;
