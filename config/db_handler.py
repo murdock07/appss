@@ -20,7 +20,7 @@ def close(connection, cursor):
     connection.close()
 
 def load_scheme(cursor):
-    db_schema = cfg.get('Schema', CFGSECTION')    
+    db_schema = cfg.get('Schema', CFGSECTION)    
     Schema = ''
     with open(db_schema, 'r') as File:
         Schema = File.read().replace('\n')
